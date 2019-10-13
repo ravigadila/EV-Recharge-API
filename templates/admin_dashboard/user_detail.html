@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header">
+  <h2>#{{user.id}} {{ user.email }}</h2>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">Details</div>
+  <div class="panel-body">
+    <div class="col-sm-6">
+      <p><strong>First Name:</strong> {{user.first_name}}</p>
+      <p><strong>Last Name:</strong> {{user.last_name}}</p>
+      <p><strong>Date Joined:</strong> {{user.date_joined}}</p>
+    </div> 
+  </div>
+</div>
+{% endblock %}

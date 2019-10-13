@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Users</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#Id</th>
+      <th>Email</th>
+      <th>Joined on</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in object_list %}
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.email }}{% if user.is_staff %} (admin){% endif %}</td>
+      <td>{{ user.date_joined }}</td>
+      <td>{% if user.is_active %} <span class="glyphicon glyphicon-ok"></span>{% else %} <span class="glyphicon glyphicon-ok"></span> {% endif %} </td>
+      <td><a href="{% url 'dashboard:user_detail' user.id %}"><button type="button" class="btn btn-primary">Details</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% if is_paginated %}
+  <div class="pagination">
+    <span class="page-links">
+    {% if page_obj.has_previous %}
+       <a href="{% url 'common_fun:user_list' %}?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span class="page-current">
+       Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+    {% if page_obj.has_next %}
+      <a href="{% url 'common_fun:user_list' %}?page={{ page_obj.next_page_number }}">Next</a>
+    {% endif %}
+    </span>
+  </div>
+{% endif %}
+{% endblock content %}
