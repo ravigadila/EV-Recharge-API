@@ -11,7 +11,6 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.utils.decorators import method_decorator
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.cache import never_cache
-from django.views.decorators.csrf import csrf_protect
 from django.views.generic import ListView, DetailView, TemplateView
 from django.views.generic.edit import CreateView, FormView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
