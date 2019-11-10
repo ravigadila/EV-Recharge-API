@@ -6,3 +6,11 @@ TODO
 - [ ] Add charging point for station
 - [ ] Check availability of charging station/point
 - [ ] Book slot for charging
+
+
+TODO Code quality:
+- [ ] Unit tests
+- [ ] CI
+- [ ] code coverage
+- [ ] code linter
+- [ ] Docs
