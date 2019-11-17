@@ -12,10 +12,10 @@ STATION_TYPE = (
 class Station(models.Model):
     """Charge station or location
     """
-    station_name = models.CharField(max_length=200, unique=True)
-    contact_name = models.CharField(max_length=200, blank=True, default="")
-    phone_number = models.CharField(max_length=20, blank=True, default="")
-    email = models.EmailField(_('email address'), blank=True, default="")
+    station_name = models.CharField(_('Name Of charging station'), max_length=200, unique=True)
+    contact_name = models.CharField(_('Contact person name'), max_length=200, blank=True, default="")
+    phone_number = models.CharField(_('Phone Number of person'), max_length=20, blank=True, default="")
+    email = models.EmailField(_('email address of station'), blank=True, default="")
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=55)
     state = models.CharField(max_length=55, blank=True, default="")
@@ -24,7 +24,7 @@ class Station(models.Model):
     landmark = models.CharField(max_length=55, blank=True, default="")
     latitude = models.DecimalField(max_digits=10, decimal_places=10, default=0)
     longitude = models.DecimalField(max_digits=10, decimal_places=10, default=0)
-    notes = models.CharField(max_length=1000, blank=True, default="")
+    notes = models.CharField(_('Extra details(optional)'), max_length=1000, blank=True, default="")
     amenities = models.CharField(max_length=255, blank=True, default="")
     station_type = models.CharField(choices=STATION_TYPE, default="UNKNOWN", max_length=55)
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
@@ -68,3 +68,11 @@ class ChargePoint(models.Model):
 
     def __str__(self):
         return self.code
+
+
+# class VehicleCharged(models.Model):
+#     pass
+
+
+# class Review(models.Model):
+#     pass
