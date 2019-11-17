@@ -1,6 +1,7 @@
-from django.conf.urls import url, include
-from . import views
+from django.conf.urls import url
+from api_app.views import station
 
 urlpatterns = [
-    url(r'^station/list/$', views.StationListView.as_view(), name="station_list"),
+    url(r'^station/list/$', station.StationListView.as_view(), name="station_list"),
+    url(r'^station/create/$', station.StationCreateView.as_view(), name="station_create"),
 ]

@@ -9,7 +9,12 @@ class StationSerializer(serializers.ModelSerializer):
             'station_name', 'contact_name', 'phone_number',
             'email', 'address', 'city',
             'state', 'zip_code', 'country',
-            'landmark', 'longitude', 'notes',
-            'amenities', 'station_type',
+            'landmark', 'latitude', 'longitude',
+            'notes', 'amenities', 'station_type',
+            'created_by', 'created_at', 'updated_at'
         ]
-        read_only_fields = ['created_by', 'created_at', 'updated_at']
+        extra_kwargs = {
+            'created_by': {'read_only': True},
+            'created_at': {'read_only': True},
+            'updated_at': {'read_only': True}
+        }

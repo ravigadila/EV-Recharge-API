@@ -1,7 +1,7 @@
 from rest_framework.generics import ListAPIView, CreateAPIView
 
-from .models import Station, ChargePoint
-from .serializers import StationSerializer
+from api_app.models import Station, ChargePoint
+from api_app.serializers import StationSerializer
 
 
 class StationListView(ListAPIView):
