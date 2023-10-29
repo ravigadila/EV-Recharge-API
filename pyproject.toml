@@ -6,20 +6,26 @@ authors = [
 ]
 description = "Ev Charging Sstation Locator API"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 classifiers = [
     "Programming Language :: Python :: 3",
 ]
 
 dependencies = [
     "Django==4.2.6",
-    "djangorestframework==3.14.0"
+    "djangorestframework==3.14.0",
+    "python-dotenv==1.0.0",
+    "psycopg2-binary==2.9.9",
+    "psycopg2==2.9.9",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pre-commit",
 ]
+
+[tool.setuptools]
+py-modules = []
 
 
 [project.urls]
