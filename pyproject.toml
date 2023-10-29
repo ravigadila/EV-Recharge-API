@@ -1,0 +1,27 @@
+[project]
+name = "EV-Recharge-API"
+version = "0.0.1"
+authors = [
+  { name="ravigadila", email="ravi.laddu09@gmail.com" },
+]
+description = "Ev Charging Sstation Locator API"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "Django==4.2.6",
+    "djangorestframework==3.14.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/ravigadila/EV-Recharge-API"
+"Bug Tracker" = "https://github.com/ravigadila/EV-Recharge-API/issues"
